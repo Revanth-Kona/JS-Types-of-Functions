@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Types Of Functions Daily Task</h1>
+    <h3>1. Arrow Functions</h3>
+    <p>it was introduced in ECMASCRIPT(ES6) .<br>
+        Arrow function has a shorter syntex compared to traditional function .
+    </p>
+
+    <h3>2. Global Scope and local Scope</h3>
+    <p>Global scope nothing but the variable is accessable to entair code .<br>
+        Local scope nothing but the variable is accessable to the bit of code itself .<br><br>
+        we cannot access the local variable outside the function where as we can access the global variable to entair
+        code .
+    </p>
+
+    <h3>3. Closure Function</h3>
+    <p>Closure function in javascript is a combination of functions bundeled together with reference to its surrounding
+        state .<br>
+        a Closure function in which the inner function has access to the outer function variable by Lexical envernoment
+        .
+    </p>
+    <h3>4. Pure Function </h3>
+    <p>pure function give the same input will always return the same output without changing any path of the code .</p>
+
+    <h3>5. Call Function </h3>
+    <p>Call Function is used to track the function in the program .<br>
+        the call stack works on the last in first out condition .
+    </p>
+    <script>
+        // Arrow function 
+        console.log(".. Arrow Function Examples ..")
+        const multiplyByTwo = (num) => {
+            return num * 2;
+        }
+        console.log(`Multiple of numbers is : ${multiplyByTwo(23)}`)
+
+        const isEven = (number) => {
+            if (number % 2 == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        console.log(`Given Number is even : ${isEven(22)}`)
+
+        console.log("                            ")
+        console.log(".. Global and local Scope ..")
+
+        var globalVar = 10;
+        function scopeTest() {
+            var localVar = 20;
+            console.log(globalVar)
+            console.log(localVar)
+        }
+        scopeTest();
+        console.log(globalVar);
+
+        console.log("                            ")
+        console.log(".. Closure function ..")
+
+        function outerFunction(){
+            let outerVar = 5;
+            function innerFunction(){
+                return outerVar;
+            }
+            return innerFunction();
+        }
+        let Closure = outerFunction()
+        console.log(Closure)
+
+        console.log("                            ")
+        console.log(".. Pure function ..")
+
+        function sum(a,b){
+            return a+b;
+        }
+        let sum1=sum(5,6);
+        let sum2=sum(5,6);
+        console.log("sum1 is :",sum1, "sum2 is :",sum2)
+
+        function multiply(x,y){
+            return x*y;
+        }
+        let mult1=multiply(5,9);
+        let mult2=multiply(5,9);
+        console.log('mult1 is :',mult1,'mult2 is :',mult2)
+
+        console.log("                            ")
+        console.log(".. Call Stack Function ..")
+        function functionA(){
+            functionB()
+        }
+        function functionB(){
+            functionC()
+        }
+        function functionC(){
+            console.log("In functionC")
+        }
+        functionA()
+    </script>
+</body>
+
+</html>
